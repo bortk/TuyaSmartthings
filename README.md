@@ -63,7 +63,7 @@ Fill the fields:
 * Gateway Server IP 
 * Tuya Device ID 
 * Tuya Device Key 
-* Tuya Device IP - the IP of the Tuya device
+* Tuya Device IP - the IP of the Tuya device. Not used for now. Can be left empty.
 
 
 ## Optional Configuration
