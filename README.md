@@ -36,17 +36,17 @@ https://docs.smartthings.com/en/latest/device-type-developers-guide/quick-start.
 
 ### Create new device code using the SmartThings IDE
 
-1. Within the SmartThings IDE, click on '*My Devices*'.
-2. Click the '*+ New Device*' button. 
-3. Enter a “Name” for the device, this can be whatever you want.
-4. Enter a “Label” for the device, this is optional and can be whatever you want.
-5. Enter a “Device Network Id” This can be anything you want. It cannot duplicate other device ID’s. 
-6. Select a “Type” from the dropdown, this should be Tuya API Switch
-7. “Version” should be published
-8. “Location” should be your hub location, probably “Home”
-9. “Hub” should be your hub name.
-10. “Group” you won’t be able to select when creating, but these are Groups you’ve created in the Things page in the SmartThings app.
-11. Click Create
+> 1. Within the SmartThings IDE, click on '*My Devices*'.
+> 2. Click the '*+ New Device*' button. 
+> 3. Enter a “Name” for the device, this can be whatever you want.
+> 4. Enter a “Label” for the device, this is optional and can be whatever you want.
+> 5. Enter a “Device Network Id” This can be anything you want. It cannot duplicate other device ID’s. 
+> 6. Select a “Type” from the dropdown, this should be Tuya API Switch
+> 7. “Version” should be published
+> 8. “Location” should be your hub location, probably “Home”
+> 9. “Hub” should be your hub name.
+> 10. “Group” you won’t be able to select when creating, but these are Groups you’ve created in the Things page in the SmartThings app.
+> 11. Click Create
 
 ### Configure new device
 This can be done from the SmartThings app or from the IDE
@@ -75,5 +75,5 @@ If you spot any errors with the plugin, feel free to modify the code.
 
 ## Credits
 
-Tuya API - https://github.com/codetheweb/tuyapi
+Tuya API - https://github.com/codetheweb/tuyapi <br>
 TuyaSmartthings - https://github.com/blawson327/TuyaSmartthings
