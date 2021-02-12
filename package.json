@@ -5,7 +5,7 @@
   "homepage": "https://github.com/bortk/TuyaSmartthings",
   "main": "TuyaSmartThingsGWServer.js",
   "scripts": {
-    "start": "npm i && node TuyaSmartThingsGWServer.js"
+    "start": "node TuyaSmartThingsGWServer.js"
   },
   "dependencies": {
     "tuyapi": "^6"
