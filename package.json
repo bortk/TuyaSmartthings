@@ -1,0 +1,17 @@
+{
+  "name": "tuya-gateway-server",
+  "version": "0.8.0",
+  "description": "Control Tuya devices locally from SmartThings via Gateway Server",
+  "homepage": "https://github.com/bortk/TuyaSmartthings",
+  "main": "TuyaSmartThingsGWServer.js",
+  "scripts": {
+    "start": "npm i && node TuyaSmartThingsGWServer.js"
+  },
+  "dependencies": {
+    "tuyapi": "^6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bortk/TuyaSmartthings.git"
+  }
+}

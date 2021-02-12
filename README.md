@@ -19,10 +19,12 @@ The API server must run on the same network as the tuya devices.
 You will need the local IP of the server for setup of Smartthings devices.
 To run the server, you need to have [Node.js](https://nodejs.org/) framework.
 
-Download the file TuyaSmartthingsGWServer.js
-
-Run the server
-  `node TuyaSmartthingsGWServer.js`
+1. Download the contents of git repo
+  `git clone https://github.com/bortk/TuyaSmartthings` or using Download ZIP from github
+2. Install dependencies
+  `npm install`
+3. Run the server
+  `npm start`
 
 ### Install the device handler code using the SmartThings IDE
 
