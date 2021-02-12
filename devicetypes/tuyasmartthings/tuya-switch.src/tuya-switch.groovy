@@ -39,9 +39,9 @@ metadata {
 		details("switch", "power", "refresh")
 	}
 }
-preferences {
-	//input(name: "deviceIP", type: "text", title: "Device IP", required: true, displayDuringSetup: true)
+preferences {	
 	input(name: "gatewayIP", type: "text", title: "Gateway Server IP", required: true, displayDuringSetup: true)
+    input(name: "deviceIP", type: "text", title: "Tuya Device IP", required: true, displayDuringSetup: true)
 	input(name: "deviceID", type: "text", title: "Tuya Device ID", required: true, displayDuringSetup: true)
 	input(name: "localKey", type: "text", title: "Tuya Device Key", required: true, displayDuringSetup: true)
 }
@@ -87,11 +87,15 @@ def parseResponse(response){
 		log.error "$device.name $device.label: Communications Error"
 		sendEvent(name: "switch", value: "offline", descriptionText: "ERROR - OffLine - mod onOffResponse")
 	} else { 
-		log.debug "${device.name} ${device.label}: Power: ${status}"
-        if(tuyapi_onoff == "true")
+		log.debug "${device.name} ${device.label}: Power: ${tuyapi_onoff}"
+        if(tuyapi_onoff == "true"){
+         	log.debug "sendEvent switch on"
         	sendEvent(name: "switch", value: "on") //,isStateChange: true)
-        else
+        }
+        else {
         	sendEvent(name: "switch", value: "off") //,isStateChange: true)
+            log.debug "sendEvent switch off"
+        }
 	}
 }
 
@@ -107,7 +111,7 @@ private sendCmdtoServer(command, hubCommand, action){
 	log.info "sendCmdtoServer command: ${command} hubCommand: ${hubCommand} action: ${action}"
 	def headers = [:] 
 	headers.put("HOST", "$gatewayIP:8083")	//	SET TO VALUE IN JAVA SCRIPT PKG.
-	//headers.put("tuyapi-ip", deviceIP)
+	headers.put("tuyapi-ip", deviceIP)
 	headers.put("tuyapi-devid", deviceID)
 	headers.put("tuyapi-localkey", localKey)
 	headers.put("tuyapi-command", command)

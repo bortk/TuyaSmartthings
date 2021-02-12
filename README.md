@@ -62,8 +62,8 @@ _Go to device -> Settings_
 Fill the fields:
 * Gateway Server IP 
 * Tuya Device ID 
-* Device Key 
-* Device IP - Tuya Device IP - Removed this setting. Will be auto discovered by the server.
+* Tuya Device Key 
+* Tuya Device IP - the IP of the Tuya device
 
 
 ## Optional Configuration

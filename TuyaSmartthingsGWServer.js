@@ -57,17 +57,16 @@ function onRequest(request, response){
 //---- Send deviceCommand and send response to SmartThings ---------
 function processDeviceCommand(request, response) {
 	
-//	var deviceIP = request.headers["tuyapi-ip"]
+	var deviceIP = request.headers["tuyapi-ip"]
 	var deviceID = request.headers["tuyapi-devid"]
 	var localKey = request.headers["tuyapi-localkey"]
 	var command =  request.headers["tuyapi-command"] 
 
-	var respMsg = "deviceCommand sending to deviceID: " + deviceID + " Command: " + command;
-	//var respMsg = "deviceCommand sending to IP: " + deviceIP + " Command: " + command;
+	var respMsg = "deviceCommand sending to IP: " + deviceIP +" deviceID: " + deviceID + " Command: " + command;
 	console.log(respMsg);
 
 	var device = new TuyaDevice({
-	  //ip: deviceIP,
+	  ip: deviceIP,
 	  id: deviceID,
 	  key: localKey
 	  , issueGetOnConnect: false
@@ -79,7 +78,6 @@ function processDeviceCommand(request, response) {
 
 	(async () => {
 		await device.find();	  
-
 		await device.connect();	  
 		console.log('Connected to device!');
 		let status = await device.get();	  
