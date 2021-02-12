@@ -23,9 +23,10 @@ logResponse("\n\r" + new Date() + "\rTuyAPI Server Error Log")
 //---- Command interface to Smart Things ---------------------------
 function onRequest(request, response){
 	var command = 	request.headers["command"]
-	var deviceIP = 	request.headers["tuyapi-ip"]
+//	var deviceIP = 	request.headers["tuyapi-ip"]
 	
-	var cmdRcvd = "\n\r" + new Date() + "\r\nIP: " + deviceIP + " sent command " + command
+	// var cmdRcvd = "\n\r" + new Date() + "\r\nIP: " + deviceIP + " sent command " + command
+	var cmdRcvd = "\n\r" + new Date() + "\r\nI sent command " + command
 	console.log(" ")
 	console.log(cmdRcvd)
 		
@@ -47,7 +48,7 @@ function onRequest(request, response){
 			response.setHeader("cmd-response", "InvalidHubCmd")
 			response.end("no command")
 			var respMsg = "#### Invalid Command ####"
-			var respMsg = new Date() + "\n\r#### Invalid Command from IP" + deviceIP + " ####\n\r"
+		//	var respMsg = new Date() + "\n\r#### Invalid Command from IP" + deviceIP + " ####\n\r"
 			console.log(respMsg)
 			logResponse(respMsg)
 	}

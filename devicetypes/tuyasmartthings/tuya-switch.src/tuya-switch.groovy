@@ -70,6 +70,7 @@ def installed() {
 }
 
 def updated() {
+    refresh()
 	runEvery1Minute(refresh)
 }
 
@@ -106,7 +107,7 @@ private sendCmdtoServer(command, hubCommand, action){
 	log.info "sendCmdtoServer command: ${command} hubCommand: ${hubCommand} action: ${action}"
 	def headers = [:] 
 	headers.put("HOST", "$gatewayIP:8083")	//	SET TO VALUE IN JAVA SCRIPT PKG.
-	headers.put("tuyapi-ip", deviceIP)
+	//headers.put("tuyapi-ip", deviceIP)
 	headers.put("tuyapi-devid", deviceID)
 	headers.put("tuyapi-localkey", localKey)
 	headers.put("tuyapi-command", command)
