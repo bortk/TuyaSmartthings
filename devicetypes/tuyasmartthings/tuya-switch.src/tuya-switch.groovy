@@ -75,7 +75,7 @@ def updated() {
 }
 
 def parseResponse(response){
-	log.debug "refreshResponse response: ${response}"
+	log.debug "parseResponse response: ${response}"
     
     def cmd_response = response.headers["cmd-response"]
    	def tuyapi_onoff = response.headers["tuyapi-onoff"]    
@@ -99,7 +99,7 @@ def parseResponse(response){
 def refresh(){
 	log.info "refresh"
 	//sendEvent(name: "switch", value: "waiting", isStateChange: true)
-	sendCmdtoServer("status", "deviceCommand", "refreshResponse")
+	sendCmdtoServer("status", "deviceCommand", "parseResponse")
 }
 
 //	----- SEND COMMAND DATA TO THE SERVER -------------------------------------
