@@ -34,6 +34,8 @@ Run the server
 
 ### Create new device code using the SmartThings IDE
 
+This step need to be repeated for each device.
+
 1. Within the SmartThings IDE, click on '*My Devices*'.
 2. Click the '*+ New Device*' button. 
 3. Enter a “Name” for the device, this can be whatever you want.
@@ -56,10 +58,18 @@ From Smarttthings app <br>
 _Go to device -> Settings_
 
 Fill the fields:
-* Device IP - Tuya Device IP (optional). Might be removed in future versions.
-* Gateway IP - The gateway server IP from above.
-* Device ID - Tuya device ID as extracted in the 1st step
-* Device Key - Tuya device key as extracted in the 1st step
+* Gateway Server IP 
+* Tuya Device ID 
+* Device Key 
+* Device IP - Tuya Device IP - Removed this setting. Will be auto discovered by the server.
+
+
+## Optional Configuration
+
+* Server port <br>
+  By default the server runs on port 8083. This can be changed from the server code and from the device handler. SAme value must be used in both places.
+* Refresh interval <br>
+  Defualt refresh interval is 1 minute. This can be changed from the device handler code. 
 
 ## 📝 Notes
 - Some devices ship with older firmware that may not work with `tuyapi`.  If you're experiencing issues, please try updating the device's firmware in the official app.
@@ -67,11 +77,9 @@ Fill the fields:
 - The key parameter for devices changes every time a device is removed and re-added to the TuyaSmart app.  If you're getting decrypt errors, try getting the key again - it might have changed.
 
 ## Issues
-
 No garantee for anything to work. Use at your own risk.
 If you spot any errors with the plugin, feel free to modify the code.
 
 ## Credits
-
 Tuya API - https://github.com/codetheweb/tuyapi <br>
 TuyaSmartthings - https://github.com/blawson327/TuyaSmartthings
