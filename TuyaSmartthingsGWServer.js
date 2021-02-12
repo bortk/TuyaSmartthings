@@ -23,10 +23,10 @@ logResponse("\n\r" + new Date() + "\rTuyAPI Server Error Log")
 //---- Command interface to Smart Things ---------------------------
 function onRequest(request, response){
 	var command = 	request.headers["command"]
-//	var deviceIP = 	request.headers["tuyapi-ip"]
+	var deviceIP = 	request.headers["tuyapi-ip"]
 	
-	// var cmdRcvd = "\n\r" + new Date() + "\r\nIP: " + deviceIP + " sent command " + command
-	var cmdRcvd = "\n\r" + new Date() + "\r\n sent command " + command
+	var cmdRcvd = "\n\r" + new Date() + "\r\nIP: " + deviceIP + " sent command " + command
+	//var cmdRcvd = "\n\r" + new Date() + "\r\n sent command " + command
 	console.log(" ")
 	console.log(cmdRcvd)
 		
@@ -57,13 +57,13 @@ function onRequest(request, response){
 //---- Send deviceCommand and send response to SmartThings ---------
 function processDeviceCommand(request, response) {
 	
-//	var deviceIP = request.headers["tuyapi-ip"]
+	var deviceIP = request.headers["tuyapi-ip"]
 	var deviceID = request.headers["tuyapi-devid"]
 	var localKey = request.headers["tuyapi-localkey"]
 	var command =  request.headers["tuyapi-command"] 
 
-	var respMsg = "deviceCommand sending to deviceID: " + deviceID + " Command: " + command;
-	//var respMsg = "deviceCommand sending to IP: " + deviceIP + " Command: " + command;
+	//var respMsg = "deviceCommand sending to deviceID: " + deviceID + " Command: " + command;
+	var respMsg = "deviceCommand sending to IP: " + deviceIP + " Command: " + command;
 	console.log(respMsg);
 
 	var device = new TuyaDevice({

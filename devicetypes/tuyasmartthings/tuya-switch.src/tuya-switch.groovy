@@ -43,7 +43,7 @@ preferences {
 	input(name: "gatewayIP", type: "text", title: "Gateway Server IP", required: true, displayDuringSetup: true)
 	input(name: "deviceID", type: "text", title: "Tuya Device ID", required: true, displayDuringSetup: true)
 	input(name: "localKey", type: "text", title: "Tuya Device Key", required: true, displayDuringSetup: true)
-    input(name: "deviceIP", type: "text", title: "Tuya Device IP", required: true, displayDuringSetup: true)
+    input(name: "deviceIP", type: "text", title: "Tuya Device IP (optional)", required: true, displayDuringSetup: true)
 }
 
 // parse events into attributes
